@@ -10,7 +10,31 @@ public class PageController {
 	@RequestMapping(method = RequestMethod.GET, value="/index")
 	public String index()
 	{	
-		return "index";
+		return "dashboard/index";
+	}
+	
+	@RequestMapping(method = RequestMethod.GET, value="/documentation")
+	public String documentation()
+	{	
+		return "documentation/documentation";
+	}
+	
+	@RequestMapping(method = RequestMethod.GET, value="/painel")
+	public String painel()
+	{	
+		return "triplify/painel";
+	}
+	
+	@RequestMapping(method = RequestMethod.GET, value="/repository")
+	public String repository()
+	{	
+		return "triplify/repository";
+	}
+	
+	@RequestMapping(method = RequestMethod.GET, value="/database")
+	public String database()
+	{	
+		return "triplify/database";
 	}
 	
 }

@@ -4,10 +4,9 @@
 
 		var content = 
 	        '<section class="content-header">' + 
-	    		'<h1> Dashboard <small>Control panel</small> </h1>' +
+	    		'<h1> Documentation </h1>' +
 	    		'<ol class="breadcrumb">' +
-	        		'<li class="active"><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a> </li>' +
-// 	        		'<li class="active">Dashboard</li>' +
+	        		'<li class="active"><a href="index.htm"><i class="fa fa-book"></i> Documentation</a> </li>' +
 	    		'</ol>' +
 			'</section>';
 			
@@ -15,7 +14,7 @@
 		contentWrapper.empty();
 		contentWrapper.append(content);
 		
-		var dashboard = $('.dashboard');
-		dashboard.addClass('active');
+		var documentation = $('.documentation');
+		documentation.addClass('active');
 		
 </script>
