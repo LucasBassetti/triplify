@@ -1,4 +1,4 @@
-<jsp:include page="../template/template.jsp" />
+<jsp:include page="../../template/template.jsp" />
 
 <script>
 
@@ -7,7 +7,7 @@
 	    		'<h1> Triplify </h1>' +
 	    		'<ol class="breadcrumb">' +
 	        		'<li><a href="painel.htm"><i class="fa fa-database"></i> Triplify</a> </li>' +
-	        		'<li class="active">Databases</li>' +
+	        		'<li class="active">New Triplify</li>' +
 	    		'</ol>' +
 			'</section>';
 			
@@ -17,9 +17,12 @@
 					'<div class="col-xs-12">' +
 						'<div class="box box-solid box-primary">' +
 							'<div class="box-header">' +
-								'<i class="fa fa-database fa-fw"></i> <h3 class="box-title">Databases</h3>' +
+								'<i class="fa fa-database fa-fw"></i> <h3 class="box-title">Triplify</h3>' +
 							'</div>' +
 							'<div class="box-body">' +
+								'<a href="#" class="btn btn-social btn-primary"> ' +
+									'<i class="fa fa-plus fa fw"></i> New ' +
+								'</a>' +
 							'</div>' +
 						'</div>' +
 					'</div>' +

@@ -1,4 +1,4 @@
-<jsp:include page="../template/template.jsp" />
+<jsp:include page="../../template/template.jsp" />
 
 <script>
 

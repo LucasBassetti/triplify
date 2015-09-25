@@ -112,6 +112,7 @@
 </head>
 
 <body class="skin-blue sidebar-mini wysihtml5-supported">
+
     <div class="wrapper">
 
         <header class="main-header">
@@ -165,6 +166,7 @@
                 </div>
             </nav>
         </header>
+        
         <!-- Left side column. contains the logo and sidebar -->
         <aside class="main-sidebar">
             <!-- sidebar: style can be found in sidebar.less -->
@@ -223,9 +225,9 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a>
-                            </li>
                         </ul>
+                    </li>
+                    <li class="configuration treeview"><a href="configuration.htm"><i class="fa fa-gear"></i> <span>Configuration</span></a>
                     </li>
                     <li class="documentation treeview"><a href="documentation.htm"><i class="fa fa-book"></i> <span>Documentation</span></a>
                     </li>
@@ -237,7 +239,6 @@
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper" style="min-height: 2575px;">
             
-
             <!-- Main content -->
             <!-- /.content -->
         </div>
@@ -455,8 +456,9 @@
         <div class="control-sidebar-bg" style="position: fixed; height: auto;"></div>
     </div>
     <!-- ./wrapper -->
+    
 
-    <!-- jQuery 2.1.4 -->
+	<!-- jQuery 2.1.4 -->
     <script src="frontend/template/plugins/jQuery/jQuery-2.1.4.min.js"></script>
     <!-- jQuery UI 1.11.4 -->
     <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
@@ -491,7 +493,22 @@
     <script src="frontend/template/dist/js/app.min.js"></script>
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="frontend/template/dist/js/pages/dashboard.js"></script>
-    <!-- AdminLTE for demo purposes -->
-    <script src="frontend/template/dist/js/demo.js"></script>
+
+	<!-- TRIPLIFY -->
+	
+<!-- 	<script src="frontend/bower_components/jquery/dist/jquery.min.js"></script> -->
+	<script src="frontend/bower_components/underscore/underscore-min.js"></script>
+	<script src="frontend/bower_components/backbone/backbone-min.js"></script>
+	
+	<script src="frontend/bower_components/stardog/js/stardog.js"></script>
+	
+	<script src="frontend/src/triplify.js"></script>
+	
+	<script src="frontend/src/triplify.dao.stardog.js"></script>
+	
+	<script src="frontend/src/triplify.util.page.js"></script>
+	<script src="frontend/src/triplify.util.dialog.js"></script>
+	
+	<script src="frontend/src/triplify.core.app.js"></script>
 
 </body>

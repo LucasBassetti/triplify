@@ -1,13 +1,17 @@
-<jsp:include page="../template/template.jsp" />
+triplify.util.Page = Backbone.Model.extend({
+	
+	initialize : function() {
+		console.log('Page Util Started!');
+	},
 
-<script>
-
+	generateRepositoryPage : function() {
+		
 		var content = 
 	        '<section class="content-header">' + 
 	    		'<h1> Triplify </h1>' +
 	    		'<ol class="breadcrumb">' +
 	        		'<li><a href="painel.htm"><i class="fa fa-database"></i> Triplify</a> </li>' +
-	        		'<li class="active">New Triplify</li>' +
+	        		'<li class="active">Ontology Repository</li>' +
 	    		'</ol>' +
 			'</section>';
 			
@@ -17,10 +21,10 @@
 					'<div class="col-xs-12">' +
 						'<div class="box box-solid box-primary">' +
 							'<div class="box-header">' +
-								'<i class="fa fa-database fa-fw"></i> <h3 class="box-title">Triplify</h3>' +
+								'<i class="fa fa-share-alt fa-fw"></i> <h3 class="box-title">Ontology Repository</h3>' +
 							'</div>' +
 							'<div class="box-body">' +
-								'<a href="#" class="btn btn-primary"> ' +
+								'<a href="#" class="btn btn-social btn-primary new-repository"> ' +
 									'<i class="fa fa-plus fa fw"></i> New ' +
 								'</a>' +
 							'</div>' +
@@ -36,4 +40,8 @@
 		var triplify = $('.triplify');
 		triplify.addClass('active');
 		
-</script>
+		return $('.new-repository');
+		
+	},
+
+});
