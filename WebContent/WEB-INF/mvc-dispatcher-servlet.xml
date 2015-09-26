@@ -11,7 +11,7 @@
         http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 
 	<context:component-scan base-package="
-		br.com.triplify.controller"		
+		br.com.triplify.controller"	
 	/>
 	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
 	<bean
@@ -22,6 +22,16 @@
 		<property name="suffix">
 			<value>.jsp</value>
 		</property>
+	</bean>
+
+	<bean
+		class="br.com.triplify.service.FileManager">
+		<!-- 
+			Default Folder Mac/Linux: /Users/{username}
+			Default Folder Windows: C:\\Users\\{username}  
+			NOTE: If you want, you can put in the property 'value' below the folders inside your {username} folder, ( e.g., "/example" , "/example/sub1/sub2" ) 
+		-->
+		<property name="path" value =""/>
 	</bean>
 
 	<mvc:annotation-driven />

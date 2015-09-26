@@ -1,7 +1,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Triplify | Dashboard</title>
+    <title>Triplify</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.5 -->
@@ -27,6 +27,9 @@
     <link rel="stylesheet" href="frontend/template/plugins/daterangepicker/daterangepicker-bs3.css">
     <!-- bootstrap wysihtml5 - text editor -->
     <link rel="stylesheet" href="frontend/template/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+
+	<!-- TRIPLIFY -->
+	<link rel="stylesheet" href="frontend/css/style.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -504,6 +507,7 @@
 	
 	<script src="frontend/src/triplify.js"></script>
 	
+	<script src="frontend/src/triplify.dao.configuration.js"></script>
 	<script src="frontend/src/triplify.dao.stardog.js"></script>
 	
 	<script src="frontend/src/triplify.util.page.js"></script>
