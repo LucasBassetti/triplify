@@ -1,0 +1,31 @@
+{
+  "name": "triplify",
+  "version": "0.0.1",
+  "homepage": "https://github.com/LucasBassetti/triplify",
+  "authors": [
+    "Lucas Bassetti <lucasbr.dafonseca@gmail.com>"
+  ],
+  "description": "Web platform to triplify relational database into RDF",
+  "main": "pages/dashboard/index.jsp",
+  "keywords": [
+    "triplify",
+    "relational",
+    "database",
+    "RDF"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "backbone": "~1.2.3",
+    "jasmine-core": "jasmine#~2.3.4",
+    "jquery": "~2.1.4",
+    "stardog": "~0.3.0",
+    "jointjs": "joint#~0.9.5"
+  }
+}
