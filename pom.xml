@@ -79,6 +79,13 @@
 			<version>2.2.4</version>
 		</dependency>
 		
+		<!-- OWL API -->
+		<dependency>
+		    <groupId>net.sourceforge.owlapi</groupId>
+		    <artifactId>owlapi-distribution</artifactId>
+		    <version>3.4.10</version>
+		</dependency>
+		
 	</dependencies>
   
 </project>

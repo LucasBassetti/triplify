@@ -96,4 +96,8 @@ triplify.util.Page = Backbone.Model.extend({
 		
 	},
 
+	generateDatabasePage : function() {
+		
+	},
+	
 });

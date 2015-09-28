@@ -1,5 +1,10 @@
 triplify.core.App = Backbone.View.extend({
 	
+	//CORE
+	model : {
+		ontology: new triplify.core.Ontology,
+	},
+	
 	// DAO
 	dao : {
 		configuration : new triplify.dao.Configuration,
@@ -33,6 +38,7 @@ triplify.core.App = Backbone.View.extend({
 		
 	},
 	
+	//configuration page
 	configuration : function() {
 		
 		var page = this.util.page;
