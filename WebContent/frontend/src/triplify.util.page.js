@@ -16,7 +16,7 @@ triplify.util.Page = Backbone.Model.extend({
 			'</section>';
 			
 		content = content +
-			'<section class="content">' +
+			'<section class="content ontology-repository">' +
 				'<div class="row">' +
 					'<div class="col-xs-12">' +
 						'<div class="box box-solid box-primary">' +
@@ -27,6 +27,7 @@ triplify.util.Page = Backbone.Model.extend({
 								'<a href="#" class="btn btn-social btn-primary new-repository"> ' +
 									'<i class="fa fa-plus fa fw"></i> New ' +
 								'</a>' +
+								'<div class="repositories"></div>' +
 							'</div>' +
 						'</div>' +
 					'</div>' +

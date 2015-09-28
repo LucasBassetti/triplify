@@ -1,16 +1,19 @@
 .configuration .databases,
-.configuration .triple-stores {
+.configuration .triple-stores,
+.ontology-repository .repositories{
 	margin-top: 10px;
 }
 
 .configuration .database,
-.configuration .triple-store {
+.configuration .triple-store,
+.ontology-repository .repository {
 	padding: 10px;
     font-size: 16px;
     border-top: 1px solid #3C8DBC;
 }
 
 .configuration .database:hover,
-.configuration .triple-store:hover {
+.configuration .triple-store:hover,
+.ontology-repository .repository:hover {
 	background-color: #EEE;
 }

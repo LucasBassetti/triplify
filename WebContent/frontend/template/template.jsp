@@ -514,6 +514,7 @@
 	<script src="frontend/src/triplify.util.dialog.js"></script>
 	
 	<script src="frontend/src/triplify.core.ontology.js"></script>
+	<script src="frontend/src/triplify.core.page.js"></script>
 	<script src="frontend/src/triplify.core.app.js"></script>
 
 </body>

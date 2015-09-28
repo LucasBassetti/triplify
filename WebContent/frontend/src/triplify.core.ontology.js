@@ -1,20 +1,62 @@
 triplify.core.Ontology = Backbone.Model.extend({
 	
 	entities : [],
+	repositories : [],
 	
 	initialize : function() {
-		this.setDefaultOntologies();
+		
 	},
 	
-	setDefaultOntologies : function() {
+	initializeDefaultOntologies : function() {
+		this.setDefaultRepositories();
+		this.setDefaultEntities();
+	},
+	
+	getRepositories : function() {
+		return this.repositories;
+	},
+	
+	setDefaultRepositories : function() {
 		
-		var rdf = this.getOntologyByURI('http://www.w3.org/1999/02/22-rdf-syntax-ns#');
-		var rdfs = this.getOntologyByURI('http://www.w3.org/1999/02/22-rdf-syntax-ns#');
-		var owl = this.getOntologyByURI('http://www.w3.org/2002/07/owl#');
+		this.repositories.push({
+			'prefix' : 'rdf',
+			'namespace' : 'http://www.w3.org/1999/02/22-rdf-syntax-ns#',
+		},
+		{
+			'prefix' : 'rdfs',
+			'namespace' : 'http://www.w3.org/1999/02/22-rdf-syntax-ns#',
+		},
+		{
+			'prefix' : 'owl',
+			'namespace' : 'http://www.w3.org/2002/07/owl#',
+		},
+		{
+			'prefix' : 'skos',
+			'namespace' : 'http://www.w3.org/2004/02/skos/core#',
+		},
+		{
+			'prefix' : 'foaf',
+			'namespace' : 'http://xmlns.com/foaf/0.1/',
+		},
+		{
+			'prefix' : 'dc',
+			'namespace' : 'http://purl.org/dc/elements/1.1/',
+		});
 		
-		this.addEntities(rdf);
-		this.addEntities(rdfs);
-		this.addEntities(owl);
+	},
+	
+	setDefaultEntities : function() {
+		
+		var $this = this;
+		
+		$.each($this.repositories, function(index, repository) {
+			
+			var ontology = $this.getOntologyByURI(repository.namespace);
+			$this.addEntities(ontology);
+			
+		});
+		
+		console.log(JSON.stringify(this.entities));
 		
 	},
 	

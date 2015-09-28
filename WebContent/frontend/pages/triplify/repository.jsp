@@ -4,8 +4,8 @@
 
 	$(window).load(function() {
 		
-		var app = new triplify.core.App;
-		app.repository();
+		var page = new triplify.core.Page;
+		page.repository();
 		
 	});
 		
