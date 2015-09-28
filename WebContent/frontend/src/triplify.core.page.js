@@ -21,6 +21,31 @@ triplify.core.Page = Backbone.View.extend({
 		console.log('App Started!');
 	},
 	
+	//dashboard page
+	dashboard : function() {
+		
+		var page = this.util.page;
+		
+		page.generateDashboardPage();
+		
+	},
+	
+	newTriplify : function() {
+		
+		var page = this.util.page;
+		
+		page.generateNewTriplifyPage();
+		
+	},
+	
+	database : function() {
+		
+		var page = this.util.page;
+		
+		page.generateDatabasePage();
+		
+	},
+	
 	//repository page
 	repository : function() {
 		
@@ -28,7 +53,6 @@ triplify.core.Page = Backbone.View.extend({
 		var dialog = this.util.dialog;
 		var ontology = this.model.ontology;
 		
-		ontology.initializeDefaultOntologies();
 		page.generateRepositoryPage();
 		
 		var newRepository = $('.new-repository');
@@ -87,6 +111,14 @@ triplify.core.Page = Backbone.View.extend({
 		});
 		
 		tripleStores.append(tsContent);
+		
+	},
+	
+	documentation : function() {
+		
+		var page = this.util.page;
+		
+		page.generateDocumentationPage();
 		
 	}
 	

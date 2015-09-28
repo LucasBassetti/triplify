@@ -2,6 +2,7 @@ package br.com.triplify.service;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintStream;
@@ -10,9 +11,9 @@ public class FileManager {
 
 	public static String 	path;
 	
-	public static String 	configurationFolder,
-							repositoryFolder,
-							ontologyFolder;
+	public static String 	configurationFolder,	// database and triple-store configuration
+							repositoryFolder,		// triplify scripts
+							ontologyFolder;			// ontology repository
 	
 	public void setPath(String path) {
 		
@@ -33,7 +34,7 @@ public class FileManager {
 		FileManager.createRepository(FileManager.repositoryFolder);
 		FileManager.createRepository(FileManager.ontologyFolder);
 		
-		FileManager.createConfigurationFile(FileManager.configurationFolder);
+		FileManager.createConfigurationFile("configuration.json");
 	}
 	
 	/**
@@ -65,7 +66,26 @@ public class FileManager {
 		
 	}
 	
-	private static void createConfigurationFile(String path) {
+	public static Boolean checkOntologyFileExist() {
+		return FileManager.checkFileExist(FileManager.ontologyFolder + "repositories.json");
+	}
+	
+	/**
+	 * Generic procedure to check if file already exist in repository.
+	 * @param filename
+	 * @return
+	 */
+	private static Boolean checkFileExist(String path){
+		
+		File f = new File(path);
+		if(f.exists()){
+			return true;
+		}
+		
+		return false;
+	}
+	
+	private static void createConfigurationFile(String filename) {
 		
 		String content = "{ " 
 				+ "\"databases\": [{"
@@ -82,22 +102,68 @@ public class FileManager {
 				+ "}] "
 				+ "}";
 		
-		File file = new File(path + "configuration.json");
-		if (!file.exists()) {
-			try{
-				file.createNewFile();
-				PrintStream printStream = new PrintStream(file);
-				printStream.print(content);
-				printStream.close();
-			}catch(IOException e){
-				e.printStackTrace();
-			}
+		if(FileManager.checkFileExist(FileManager.configurationFolder + filename)) {
+			File file = FileManager.createFile(FileManager.configurationFolder, filename);
+			FileManager.writeToFile(file, content);
 		}
 		
 	}
 	
+	public static File createOntologyFile(String filename) {
+		 return FileManager.createFile(FileManager.ontologyFolder, filename);
+	}
+	
+	/** 
+	 * Generic Procedure for creating a File.
+	 * @param path
+	 * @param filename
+	 * @return
+	 */
+    private static File createFile (String path, String filename) 
+    {    	
+		File file = new File(path + filename);		
+		if (!file.exists()) {	
+			try{
+				file.createNewFile();
+			}catch(IOException e){
+				e.printStackTrace();
+			}
+		}
+		return file;
+	}
+	
+    /**
+     * Procedure for write a String content in a File.
+     * @param file
+     * @param content
+     * @throws IOException
+     */
+    public static void writeToFile (File file, String content)
+   	{
+		try {
+			PrintStream printStream = new PrintStream(file);
+			printStream.print(content);
+			printStream.close();		
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+   	}
+	
+    /**
+     * 
+     * @return
+     */
 	public static String openConfigurationFileAsString() {
 		return FileManager.openFileAsString(FileManager.configurationFolder, "configuration.json");
+	}
+	
+	public static String openOntologyRepositoriesFileAsString() {
+		return FileManager.openFileAsString(FileManager.ontologyFolder, "repositories.json");
+	}
+	
+	public static String openOntologyEntitiesFileAsString() {
+		return FileManager.openFileAsString(FileManager.ontologyFolder, "entities.json");
 	}
 	
 	/**

@@ -4,12 +4,79 @@ triplify.core.Ontology = Backbone.Model.extend({
 	repositories : [],
 	
 	initialize : function() {
+		this.initializeOntologies();
+	},
+	
+	initializeOntologies : function() {
+		
+		var $this = this;
+		
+		$.ajax({
+			type: 'POST',
+			async: false,
+			url: 'checkOntologyFileExist.htm',
+			success: function(exist) {
+				console.log(exist);
+				if(exist === 'false') {
+					$this.createDefaultOntologyFile();
+				}
+				else {
+					$this.loadEntities();
+					$this.loadRepositories();
+				}
+			}
+		});
 		
 	},
 	
-	initializeDefaultOntologies : function() {
+	createDefaultOntologyFile : function() {
+		
+		var $this = this;
+		
 		this.setDefaultRepositories();
 		this.setDefaultEntities();
+		
+		$.ajax({
+			type: 'POST',
+			async: false,
+			url: 'createOntologyFile.htm',
+			data : {
+				'repositories' : JSON.stringify($this.repositories),
+				'entities' : JSON.stringify($this.entities)
+			}
+		})
+		
+	},
+	
+	loadEntities : function() {
+		
+		var $this = this;
+		
+		$.ajax({
+			type: 'POST',
+			async: false,
+			url: 'openOntologyEntitiesFile.htm',
+			dataType: 'json',
+			success : function(data) {
+				$this.entities = data;
+			}
+		})
+	},
+	
+	loadRepositories : function() {
+		
+		var $this = this;
+		
+		$.ajax({
+			type: 'POST',
+			async: false,
+			dataType: 'json',
+			url: 'openOntologyRepositoriesFile.htm',
+			success : function(data) {
+				$this.repositories = data;
+			}
+		})
+		
 	},
 	
 	getRepositories : function() {

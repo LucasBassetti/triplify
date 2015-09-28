@@ -198,7 +198,7 @@
                 <ul class="sidebar-menu">
                     <li class="header">MAIN NAVIGATION</li>
                      <li class="dashboard treeview">
-                     	<a href="index.htm"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
+                     	<a href="#" id="page-dashboard"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
                     </li>
                     <li class="triplify treeview">
                         <a href="#">
@@ -206,11 +206,11 @@
                             <i class="fa fa-angle-left pull-right"></i>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="painel.htm"><i class="fa fa-circle-o"></i> New Triplify </a>
+                            <li><a href="#" id="page-new-triplify"><i class="fa fa-circle-o"></i> New Triplify </a>
                             </li>
-                            <li><a href="repository.htm"><i class="fa fa-circle-o"></i> Ontology Respository </a>
+                            <li><a href="#" id="page-ontology-repository"><i class="fa fa-circle-o"></i> Ontology Respository </a>
                             </li>
-                            <li><a href="database.htm"><i class="fa fa-circle-o"></i> Databases </a>
+                            <li><a href="#" id="page-databases"><i class="fa fa-circle-o"></i> Databases </a>
                             </li>
                             <li>
                                 <a href="#"><i class="fa fa-circle-o"></i> Level One <i class="fa fa-angle-left pull-right"></i></a>
@@ -230,9 +230,9 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="configuration treeview"><a href="configuration.htm"><i class="fa fa-gear"></i> <span>Configuration</span></a>
+                    <li class="configuration treeview"><a href="#" id="page-configuration"><i class="fa fa-gear"></i> <span>Configuration</span></a>
                     </li>
-                    <li class="documentation treeview"><a href="documentation.htm"><i class="fa fa-book"></i> <span>Documentation</span></a>
+                    <li class="documentation treeview"><a href="#" id="page-documentation"><i class="fa fa-book"></i> <span>Documentation</span></a>
                     </li>
                 </ul>
             </section>
