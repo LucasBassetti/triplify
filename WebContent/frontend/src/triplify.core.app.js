@@ -53,6 +53,7 @@ triplify.core.App = Backbone.View.extend({
 	repository : function() {
 		
 		var page = this.model.page;
+		var ontology = this.model.ontology;
 		var dialog = this.util.dialog;
 		
 		page.repository();
@@ -60,6 +61,43 @@ triplify.core.App = Backbone.View.extend({
 		var newRepository = $('.new-repository');
 		newRepository.click(function() {
 			dialog.generateRepositoryDialog();
+			
+			var testConnection = $('.test-connection');
+			testConnection.click(function() {
+				
+				var namespace = $('.namespace').val();
+				var messageContent = ontology.testConnection(namespace);
+				
+				var message = $('.message');
+				message.empty();
+				message.append(messageContent);
+				
+			});
+			
+			var save = $('.save-repository');
+			save.click(function(){
+				
+				var namespace = $('.namespace').val();
+				var prefix = $('.prefix').val();
+				
+				if(prefix === '' || namespace === '') {
+					alert('Please Enter Prefix and Namespace');
+				}
+				else {
+					var result = ontology.update(prefix, namespace);
+					if(result === 'OK!') {
+						$('#myModal').modal('hide');
+					}
+					else {
+						alert('Failure on import the ontology!')
+					}
+				}
+			});
+			
+			$('#myModal').on('hidden.bs.modal', function (e) {
+				page.repository();
+			});
+			
 		});
 		
 	},

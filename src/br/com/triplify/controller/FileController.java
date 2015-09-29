@@ -32,6 +32,17 @@ public class FileController {
 		FileManager.writeToFile(file, entities);
 	}
 	
+	@RequestMapping(method = RequestMethod.POST, value="/updateOntologyFile")
+	public @ResponseBody String updateOntologyFile(@RequestParam("repositories") String repositories, @RequestParam("entities") String entities) {
+		File file = FileManager.createOntologyFile("repositories.json");
+		FileManager.writeToFile(file, repositories);
+		
+		file = FileManager.createOntologyFile("entities.json");
+		FileManager.writeToFile(file, entities);
+		
+		return "OK!";
+	}
+	
 	@RequestMapping(method = RequestMethod.POST, value="/openOntologyRepositoriesFile")
 	public @ResponseBody String openOntologyRepositoriesFile() {	
 		return FileManager.openOntologyRepositoriesFileAsString();

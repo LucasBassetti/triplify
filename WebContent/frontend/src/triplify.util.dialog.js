@@ -21,7 +21,7 @@ triplify.util.Dialog = Backbone.Model.extend({
 				      '<div class="modal-body"></div>' +
 				      '<div class="modal-footer">' +
 				        '<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>' +
-				        '<button type="button" class="btn btn-primary">Save</button>' +
+				        '<button type="button" class="btn btn-primary save-repository">Save</button>' +
 				      '</div>' +
 				    '</div>' +
 				  '</div>' +
@@ -47,18 +47,18 @@ triplify.util.Dialog = Backbone.Model.extend({
 			    '<div class="form-group">' +
 			      '<label class="control-label col-sm-2" for="email">Prefix:</label>' +
 			      '<div class="col-sm-10">' +
-			        '<input type="prefix" class="form-control" id="email" placeholder="Enter prefix">' +
+			        '<input type="prefix" class="form-control prefix" id="email" placeholder="Enter prefix">' +
 			      '</div>' +
 			   '</div>' +
 			   '<div class="form-group">' +
 			      '<label class="control-label col-sm-2" for="pwd">Namespace:</label>' +
 			      '<div class="col-sm-10">' +          
-			        '<input type="namespace" class="form-control" id="pwd" placeholder="Enter namespace">' +
+			        '<input type="namespace" class="form-control namespace" id="pwd" placeholder="Enter namespace">' +
 			      '</div>' +
 			    '</div>' +
 			    '<div class="form-group">' +
 				    '<div class="col-sm-offset-2 col-sm-2">' +
-				      '<button type="button" class="btn btn-default">Test</button>' +
+				      '<button type="button" class="btn btn-default test-connection">Test</button>' +
 				    '</div>' +
 				    '<div class="col-sm-8 message"></div>' +
 				  '</div>' +
@@ -69,6 +69,10 @@ triplify.util.Dialog = Backbone.Model.extend({
 		$('.modal-body').append(modalBody);
 		
 		$('#myModal').modal('show');
+	},
+	
+	closeDialog : function() {
+		$('#myModal').modal('hide');
 	},
 	
 });
