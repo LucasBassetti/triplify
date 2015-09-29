@@ -1,7 +1,7 @@
 triplify.dao.Configuration = Backbone.Model.extend({
 	
 	initialize : function() {
-		console.log('Stardog Started!');
+		this.testConnection();
 	},
 	
 	getFileConfiguration : function(){
@@ -25,4 +25,31 @@ triplify.dao.Configuration = Backbone.Model.extend({
 		return configuration;
 	},
 
+	testConnection : function() {
+		
+		$.ajax({
+			type: "POST",
+			async: false,
+			url: 'testMySQLConnection.htm',
+			data: {
+				'endpoint' : 'localhost',
+				'username' : 'root',
+				'password' : 'root'
+			},
+			success: function(connected) {
+				if(connected === 'true') {
+					console.log('Database connected!');
+				}
+				else {
+					console.log('Connection Fail!');
+				}
+			},
+			error: function() {
+
+			}
+		})
+
+		
+	},
+	
 });

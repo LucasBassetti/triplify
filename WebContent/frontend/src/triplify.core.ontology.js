@@ -119,7 +119,7 @@ triplify.core.Ontology = Backbone.Model.extend({
 		$.each($this.repositories, function(index, repository) {
 			
 			var ontology = $this.getOntologyByURI(repository.namespace);
-			$this.addEntities(ontology);
+			$this.addEntities(ontology, repository.prefix);
 			
 		});
 		
@@ -127,12 +127,15 @@ triplify.core.Ontology = Backbone.Model.extend({
 		
 	},
 	
-	addEntities : function(ontology) {
+	addEntities : function(ontology, prefix) {
 		
 		var entities = this.entities;
 		
 		$.each(ontology['@graph'], function(index, entity) {
-			entities.push(entity['@id'])
+			entities.push({
+				'label' : entity['@id'],
+				'category' : prefix
+			});
 		})
 		
 	},

@@ -43,7 +43,27 @@ triplify.util.Dialog = Backbone.Model.extend({
 		
 		var modalTitle = 'New Ontology Repository';
 		var modalBody = 
-			'Hello!';
+			'<form class="form-horizontal new-ontology-repository" role="form">' +
+			    '<div class="form-group">' +
+			      '<label class="control-label col-sm-2" for="email">Prefix:</label>' +
+			      '<div class="col-sm-10">' +
+			        '<input type="prefix" class="form-control" id="email" placeholder="Enter prefix">' +
+			      '</div>' +
+			   '</div>' +
+			   '<div class="form-group">' +
+			      '<label class="control-label col-sm-2" for="pwd">Namespace:</label>' +
+			      '<div class="col-sm-10">' +          
+			        '<input type="namespace" class="form-control" id="pwd" placeholder="Enter namespace">' +
+			      '</div>' +
+			    '</div>' +
+			    '<div class="form-group">' +
+				    '<div class="col-sm-offset-2 col-sm-2">' +
+				      '<button type="button" class="btn btn-default">Test</button>' +
+				    '</div>' +
+				    '<div class="col-sm-8 message"></div>' +
+				  '</div>' +
+			  '</form>';
+			  
 		
 		$('.modal-title').append(modalTitle);
 		$('.modal-body').append(modalBody);

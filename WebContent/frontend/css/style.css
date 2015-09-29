@@ -4,16 +4,42 @@
 	margin-top: 10px;
 }
 
-.configuration .database,
-.configuration .triple-store,
-.ontology-repository .repository {
+.configuration .database:not(:first-child),
+.configuration .triple-store:not(:first-child),
+.ontology-repository .repository:not(:first-child) {
 	padding: 10px;
     font-size: 16px;
-    border-top: 1px solid #3C8DBC;
+    border-bottom: 1px solid #3C8DBC;
 }
 
-.configuration .database:hover,
-.configuration .triple-store:hover,
-.ontology-repository .repository:hover {
-	background-color: #EEE;
+.configuration .database:first-child,
+.configuration .triple-store:first-child,
+.ontology-repository .repository:first-child {
+	padding: 10px;
+    font-size: 16px;
+	background-color: #3C8DBC;
+    color: #FFF;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.configuration .database:hover:not(:first-child),
+.configuration .triple-store:hover:not(:first-child),
+.ontology-repository .repository:hover:not(:first-child) {
+	background-color: #F5FBFF;
+}
+
+
+.ontology-repository a {
+	cursor: pointer;
+}
+
+.ontology-repository .delete-repository {
+	margin-left: 5px;
+}
+
+
+.new-ontology-repository .message {
+	padding: 6px;
+    margin-left: -20px;
 }

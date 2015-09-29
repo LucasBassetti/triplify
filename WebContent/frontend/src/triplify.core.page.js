@@ -1,72 +1,60 @@
-triplify.core.Page = Backbone.View.extend({
+triplify.core.Page = Backbone.Model.extend({
 	
-	//CORE
-	model : {
-		ontology: new triplify.core.Ontology,
-	},
-	
-	// DAO
-	dao : {
-		configuration : new triplify.dao.Configuration,
-	},
-
-	// UTIL
-	util : {
-		page : new triplify.util.Page,
-		dialog : new triplify.util.Dialog,
-	},
+	app : undefined,
 	
 	//initialize
 	initialize : function() {
-		console.log('App Started!');
+		
+	},
+	
+	setApp : function(app) {
+		this.app = app;
 	},
 	
 	//dashboard page
 	dashboard : function() {
 		
-		var page = this.util.page;
-		
-		page.generateDashboardPage();
+		var pageUtil = this.app.util.page;
+		pageUtil.generateDashboardPage();
 		
 	},
 	
 	newTriplify : function() {
 		
-		var page = this.util.page;
-		
-		page.generateNewTriplifyPage();
+		var pageUtil = this.app.util.page;
+		pageUtil.generateNewTriplifyPage();
 		
 	},
 	
 	database : function() {
 		
-		var page = this.util.page;
-		
-		page.generateDatabasePage();
+		var pageUtil = this.app.util.page;
+		pageUtil.generateDatabasePage();
 		
 	},
 	
 	//repository page
 	repository : function() {
 		
-		var page = this.util.page;
-		var dialog = this.util.dialog;
-		var ontology = this.model.ontology;
+		var pageUtil = this.app.util.page;
+		var ontology = this.app.model.ontology;
 		
-		page.generateRepositoryPage();
-		
-		var newRepository = $('.new-repository');
-		newRepository.click(function() {
-			//alert('NEW!');
-			dialog.generateRepositoryDialog();
-		});
+		pageUtil.generateRepositoryPage();
 		
 		var repositories = $('.repositories');
 		var rpContent = '';
 		
+		rpContent += '<div class="repository">';
+		rpContent += '<div class="col-sm-1"></div>';
+		rpContent += '<div class="col-sm-1"><b>Prefix</b></div>';
+		rpContent += '<b>Namespace</b>';
+		rpContent += '</div>';
+		
 		$.each(ontology.getRepositories(), function(index, repository) {
 			rpContent += '<div class="repository">';
-			rpContent += repository.prefix + ' ' + repository.namespace;
+			rpContent += '<div class="col-sm-1"> <a class="edit-repository" alt="Edit"> <i class="fa fa-edit"></i> </a>';
+			rpContent += '<a class="delete-repository" alt="Delete"> <i class="fa fa-trash-o"></i> </a> </div>';
+			rpContent += '<div class="col-sm-1">' + repository.prefix + '</div> ' + repository.namespace;
 			rpContent += '</div>';
 		});
 		
@@ -77,10 +65,10 @@ triplify.core.Page = Backbone.View.extend({
 	//configuration page
 	configuration : function() {
 		
-		var page = this.util.page;
-		var configuration = this.dao.configuration;
+		var pageUtil = this.app.util.page;
+		var configuration = this.app.dao.configuration;
 		
-		page.generateConfigurationPage();
+		pageUtil.generateConfigurationPage();
 		
 		var conf = configuration.getFileConfiguration();
 		
@@ -92,21 +80,26 @@ triplify.core.Page = Backbone.View.extend({
 		var tsContent = '',
 			dbContent = '';
 		
+		dbContent += '<div class="database">';
+		dbContent += '<div class="col-sm-2">Name</div><div class="col-sm-6">Endpoint</div><div class="col-sm-2">Username</div>Password';
+		dbContent += '</div>';
+		
 		$.each(conf.databases, function(index, database) {
 			dbContent += '<div class="database">';
-			dbContent += database.name + ' ' + database.endpoint + ' ' + database.username + ' ' + database.password;
-			dbContent += '</div>';
-			
-			dbContent += '<div class="database">';
-			dbContent += database.name + ' ' + database.endpoint + ' ' + database.username + ' ' + database.password;
+			dbContent += '<div class="col-sm-2">' + database.name + '</div><div class="col-sm-6">' + database.endpoint + '</div><div class="col-sm-2">' + database.username + '</div>' + database.password;
 			dbContent += '</div>';
 		});
 		
 		databases.append(dbContent);
 		
+		
+		tsContent += '<div class="triple-store"">';
+		tsContent += '<div class="col-sm-2">Name</div><div class="col-sm-6">Endpoint</div><div class="col-sm-2">Username</div>Password';
+		tsContent += '</div>';
+		
 		$.each(conf.tripleStores, function(index, tripleStore) {
 			tsContent += '<div class="triple-store">';
-			tsContent += tripleStore.name + ' ' + tripleStore.endpoint + ' ' + tripleStore.username + ' ' + tripleStore.password;
+			tsContent += '<div class="col-sm-2">' + tripleStore.name + '</div><div class="col-sm-6">' + tripleStore.endpoint + '</div><div class="col-sm-2">' + tripleStore.username + '</div>' + tripleStore.password;
 			tsContent += '</div>';
 		});
 		
@@ -116,9 +109,8 @@ triplify.core.Page = Backbone.View.extend({
 	
 	documentation : function() {
 		
-		var page = this.util.page;
-		
-		page.generateDocumentationPage();
+		var pageUtil = this.app.util.page;
+		pageUtil.generateDocumentationPage();
 		
 	}
 	

@@ -4,31 +4,33 @@
 
 		$(window).load(function() {
 			
-			var page = new triplify.core.Page;
-			page.dashboard();
+			var app = new triplify.core.App;
+			app.start();
+			
+			app.dashboard();
 			
 			$('#page-dashboard').click(function(){
-				page.dashboard();
+				app.dashboard();
 			});
 			
 			$('#page-new-triplify').click(function(){
-				page.newTriplify();
+				app.newTriplify();
 			});
 			
 			$('#page-ontology-repository').click(function(){
-				page.repository();
+				app.repository();
 			});
 			
 			$('#page-databases').click(function(){
-				page.database();
+				app.database();
 			});
 			
 			$('#page-configuration').click(function(){
-				page.configuration();
+				app.configuration();
 			});
 			
 			$('#page-documentation').click(function(){
-				page.documentation();
+				app.documentation();
 			});
 			
 			
