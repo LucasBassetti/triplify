@@ -52,6 +52,8 @@ triplify.core.App = Backbone.View.extend({
 	
 	repository : function() {
 		
+		var $this = this;
+		
 		var page = this.model.page;
 		var ontology = this.model.ontology;
 		var dialog = this.util.dialog;
@@ -61,6 +63,31 @@ triplify.core.App = Backbone.View.extend({
 		var newRepository = $('.new-repository');
 		newRepository.click(function() {
 			dialog.generateRepositoryDialog();
+			generateDialogProcedures();
+		});
+		
+		var editRepository = $('.edit-repository');
+		editRepository.click(function(){
+			var prefix = $(this).parent().siblings('.r-prefix').text();
+			var namespace = $(this).parent().siblings('.r-namespace').text();
+			
+			dialog.generateRepositoryDialog();
+			generateDialogProcedures();
+			
+			$('.namespace').val(namespace);
+			$('.prefix').val(prefix);
+			
+			console.log(namespace);
+			console.log(prefix);
+		});
+		
+		var deleteRepository = $('.delete-repository');
+		deleteRepository.click(function(){
+			var prefix = $(this).parent().siblings('.r-prefix').text();
+			var namespace = $(this).parent().siblings('.r-namespace').text();
+		});
+		
+		function generateDialogProcedures() {
 			
 			var testConnection = $('.test-connection');
 			testConnection.click(function() {
@@ -95,10 +122,10 @@ triplify.core.App = Backbone.View.extend({
 			});
 			
 			$('#myModal').on('hidden.bs.modal', function (e) {
-				page.repository();
+				$this.repository();
 			});
 			
-		});
+		}
 		
 	},
 	

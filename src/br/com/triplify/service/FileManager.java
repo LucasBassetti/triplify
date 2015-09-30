@@ -90,7 +90,7 @@ public class FileManager {
 		String content = "{ " 
 				+ "\"databases\": [{"
 				+ "\"name\": \"mysql\", "
-				+ "\"endpoint\": \"http://localhost\", "
+				+ "\"endpoint\": \"localhost\", "
 				+ "\"username\": \"root\", "
 				+ "\"password\": \"root\" "
 				+ "}], "
@@ -102,7 +102,7 @@ public class FileManager {
 				+ "}] "
 				+ "}";
 		
-		if(FileManager.checkFileExist(FileManager.configurationFolder + filename)) {
+		if(!FileManager.checkFileExist(FileManager.configurationFolder + filename)) {
 			File file = FileManager.createFile(FileManager.configurationFolder, filename);
 			FileManager.writeToFile(file, content);
 		}

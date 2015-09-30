@@ -54,7 +54,7 @@ triplify.core.Page = Backbone.Model.extend({
 			rpContent += '<div class="repository">';
 			rpContent += '<div class="col-sm-1"> <a class="edit-repository" alt="Edit"> <i class="fa fa-edit"></i> </a>';
 			rpContent += '<a class="delete-repository" alt="Delete"> <i class="fa fa-trash-o"></i> </a> </div>';
-			rpContent += '<div class="col-sm-1">' + repository.prefix + '</div> ' + repository.namespace;
+			rpContent += '<div class="col-sm-1 r-prefix">' + repository.prefix + '</div> <span class="r-namespace">' + repository.namespace + '</span>';
 			rpContent += '</div>';
 		});
 		
@@ -81,12 +81,14 @@ triplify.core.Page = Backbone.Model.extend({
 			dbContent = '';
 		
 		dbContent += '<div class="database">';
-		dbContent += '<div class="col-sm-2">Name</div><div class="col-sm-6">Endpoint</div><div class="col-sm-2">Username</div>Password';
+		dbContent += '<div class="col-sm-1"></div> <div class="col-sm-2">Name</div><div class="col-sm-4">Endpoint</div><div class="col-sm-2">Username</div>Password';
 		dbContent += '</div>';
 		
 		$.each(conf.databases, function(index, database) {
 			dbContent += '<div class="database">';
-			dbContent += '<div class="col-sm-2">' + database.name + '</div><div class="col-sm-6">' + database.endpoint + '</div><div class="col-sm-2">' + database.username + '</div>' + database.password;
+			dbContent += '<div class="col-sm-1"> <a class="edit-database" alt="Edit"> <i class="fa fa-edit"></i> </a>';
+			dbContent += '<a class="delete-database" alt="Delete"> <i class="fa fa-trash-o"></i> </a> </div>';
+			dbContent += '<div class="col-sm-2">' + database.name + '</div><div class="col-sm-4">' + database.endpoint + '</div><div class="col-sm-2">' + database.username + '</div>' + database.password;
 			dbContent += '</div>';
 		});
 		
@@ -94,12 +96,14 @@ triplify.core.Page = Backbone.Model.extend({
 		
 		
 		tsContent += '<div class="triple-store"">';
-		tsContent += '<div class="col-sm-2">Name</div><div class="col-sm-6">Endpoint</div><div class="col-sm-2">Username</div>Password';
+		tsContent += '<div class="col-sm-1"></div> <div class="col-sm-2">Name</div><div class="col-sm-4">Endpoint</div><div class="col-sm-2">Username</div>Password';
 		tsContent += '</div>';
 		
 		$.each(conf.tripleStores, function(index, tripleStore) {
 			tsContent += '<div class="triple-store">';
-			tsContent += '<div class="col-sm-2">' + tripleStore.name + '</div><div class="col-sm-6">' + tripleStore.endpoint + '</div><div class="col-sm-2">' + tripleStore.username + '</div>' + tripleStore.password;
+			tsContent += '<div class="col-sm-1"> <a class="edit-triple-store" alt="Edit"> <i class="fa fa-edit"></i> </a>';
+			tsContent += '<a class="delete-triple-store" alt="Delete"> <i class="fa fa-trash-o"></i> </a> </div>';
+			tsContent += '<div class="col-sm-2">' + tripleStore.name + '</div><div class="col-sm-4">' + tripleStore.endpoint + '</div><div class="col-sm-2">' + tripleStore.username + '</div>' + tripleStore.password;
 			tsContent += '</div>';
 		});
 		

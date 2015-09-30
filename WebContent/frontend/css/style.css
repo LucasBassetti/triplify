@@ -29,15 +29,16 @@
 	background-color: #F5FBFF;
 }
 
-
-.ontology-repository a {
+.ontology-repository a,
+.configuration a {
 	cursor: pointer;
 }
 
-.ontology-repository .delete-repository {
+.ontology-repository .delete-repository,
+.configuration .delete-database,
+.configuration .delete-triple-store {
 	margin-left: 5px;
 }
-
 
 .new-ontology-repository .message {
 	padding: 6px;
