@@ -1,4 +1,4 @@
-triplify.core.App = Backbone.View.extend({
+triplify.core.App = Backbone.Model.extend({
 	
 	//CORE
 	model : {

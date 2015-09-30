@@ -29,7 +29,7 @@ triplify.core.Ontology = Backbone.Model.extend({
 		
 	},
 	
-setDefaultRepositories : function() {
+	setDefaultRepositories : function() {
 		
 		this.repositories.push({
 			'prefix' : 'rdf',
