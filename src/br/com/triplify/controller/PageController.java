@@ -7,9 +7,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class PageController {
 
+//	@RequestMapping(method = RequestMethod.GET, value="/index")
+//	public String index() {	
+//		return "pages/dashboard/index";
+//	}
+	
 	@RequestMapping(method = RequestMethod.GET, value="/index")
 	public String index() {	
-		return "pages/dashboard/index";
+		return "app/index";
 	}
 	
 }

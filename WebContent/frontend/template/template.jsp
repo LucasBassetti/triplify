@@ -7,9 +7,9 @@
     <!-- Bootstrap 3.3.5 -->
     <link rel="stylesheet" href="frontend/template/bootstrap/css/bootstrap.min.css">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="frontend/bower_components/font-awesome/css/font-awesome.min.css">
     <!-- Ionicons -->
-    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="frontend/bower_components/Ionicons/css/ionicons.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="frontend/template/dist/css/AdminLTE.min.css">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
@@ -287,7 +287,7 @@
 	<!-- jQuery 2.1.4 -->
     <script src="frontend/template/plugins/jQuery/jQuery-2.1.4.min.js"></script>
     <!-- jQuery UI 1.11.4 -->
-    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+    <script src="frontend/bower_components/jquery-ui/jquery-ui.min.js"></script>
     <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
     <script>
         $.widget.bridge('uibutton', $.ui.button);
@@ -327,6 +327,8 @@
 <!-- 	<script src="frontend/bower_components/jquery/dist/jquery.min.js"></script> -->
 	<script src="frontend/bower_components/underscore/underscore-min.js"></script>
 	<script src="frontend/bower_components/backbone/backbone-min.js"></script>
+	
+	<script src="frontend/bower_components/angular/angular.js"></script>
 	
 	<script src="frontend/bower_components/stardog/js/stardog.js"></script>
 	
