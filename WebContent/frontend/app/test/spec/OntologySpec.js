@@ -8,47 +8,55 @@ describe("triplify Ontology object", function () {
 	});
 });
 
-describe("Create Ontology module successfully", function () {
+describe("Create Ontology ontologyule successfully", function () {
 
 	it("without arguments", function () {
-		var mod = new Ontology();
-		expect(mod).toEqual(jasmine.any(Object));
+		var ontology = new Ontology();
+		expect(ontology).toEqual(jasmine.any(Object));
 	});
 
 });
 
-describe("Ontology module loadRepositories", function () {
+describe("Ontology repositories", function () {
 	
-	var mod = new Ontology();
-	mod.loadRepositories()
+	var ontology = new Ontology();
 	
-//	it("must load a array", function () {
-//		expect(mod.loadRepositories()).toEqual(jasmine.any(Array));
-//	});
+	it("must be a array", function() {
+		expect(ontology.repositories).toEqual(jasmine.any(Array));
+	});
 	
-	 it("must be a array", function() {
-//		var repositories = mod.loadRepositories()
-		expect(mod.repositories).toEqual(jasmine.any(Array));
-	 });
-	
+	it("must delete a repository", function() {
+		 
+		 var repository = {
+			'prefix' : 'fake',
+			'namespace' : 'http://www.fakenamespace.com'
+		};
+		 
+		ontology.repositories.push(repository) 
+		var repositories = ontology.repositories;
+		
+		ontology.deleteRepository(repository);
+		expect(JSON.stringify(ontology.repositories)).not.toEqual(JSON.stringify(repositories));
+	});
+		
 });
 
 describe("A spy", function() {
 	
-	var mod = new Ontology();
+	var ontology = new Ontology();
 	var repositories = undefined;
 
 	beforeEach(function() {
-		spyOn(mod, 'loadRepositories');
-		repositories = mod.loadRepositories()
+		spyOn(ontology, 'loadRepositories');
+		repositories = ontology.loadRepositories()
 	});
-
+	
 	it("tracks that the spy was called", function() {
-		expect(mod.loadRepositories).toHaveBeenCalled();
+		expect(ontology.loadRepositories).toHaveBeenCalled();
 	});
 
 	 it("tracks all the arguments of its calls", function() {
-		expect(mod.loadRepositories).toHaveBeenCalledWith();
+		expect(ontology.loadRepositories).toHaveBeenCalledWith();
 	 });
 	 
 });

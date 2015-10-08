@@ -231,7 +231,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="configuration treeview"><a href="#" id="page-configuration"><i class="fa fa-gear"></i> <span>Configuration</span></a>
+                    <li class="configuration treeview"><a href="#/configuration" id="page-configuration"><i class="fa fa-gear"></i> <span>Configuration</span></a>
                     </li>
                     <li class="documentation treeview"><a href="#" id="page-documentation"><i class="fa fa-book"></i> <span>Documentation</span></a>
                     </li>
@@ -339,7 +339,8 @@
 	
 	<script src="/triplify/frontend/app/scripts/controllers/triplify.ctrl.configurationCtrl.js"></script>
 	<script src="/triplify/frontend/app/scripts/controllers/triplify.ctrl.repositoryCtrl.js"></script>
-	<script src="/triplify/frontend/app/scripts/controllers/triplify.ctrl.modalCtrl.js"></script>
+	<script src="/triplify/frontend/app/scripts/controllers/triplify.ctrl.modalRepositoryCtrl.js"></script>
+	<script src="/triplify/frontend/app/scripts/controllers/triplify.ctrl.modalConfigurationCtrl.js"></script>
 
 </body>
 </html>

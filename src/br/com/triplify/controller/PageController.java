@@ -17,4 +17,9 @@ public class PageController {
 		return "app/index";
 	}
 	
+	@RequestMapping(method = RequestMethod.GET, value="/test")
+	public String test() {	
+		return "app/test/SpecRunner";
+	}
+	
 }

@@ -7,8 +7,8 @@ angular.module("triplifyApp").controller("repositoryCtrl", function ($scope, Mod
 		console.log('EDIT: ' + JSON.stringify(repository));
 		
         ModalService.showModal({
-            templateUrl: 'modal.html',
-            controller: "modalController",
+            templateUrl: 'modalRepository.html',
+            controller: "modalRepositoryCtrl",
         	inputs: {
         		repository : repository
 	        }

@@ -148,6 +148,8 @@ triplify.model.Ontology = (function() {
 			
 			var $this = this; 
 			
+			if(!ontology['@graph']) { return; }
+				
 			$.each(ontology['@graph'], function(index, entity) {
 				$this.entities.push({
 					'label' : entity['@id'],

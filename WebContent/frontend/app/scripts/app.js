@@ -34,12 +34,13 @@ angular.module('triplifyApp').service('sharedOntology', function() {
 angular.module('triplifyApp').service('sharedConfiguration', function() {
 	
 	var Configuration = new triplify.model.Configuration();
+	console.log(JSON.stringify(Configuration));
 	
     return {
         getConfiguration: function() {
             return Configuration;
         },
-        setOntology: function(newConfiguration) {
+        setConfiguration: function(newConfiguration) {
         	Configuration = newConfiguration;
         }
     }

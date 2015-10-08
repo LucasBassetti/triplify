@@ -1,4 +1,4 @@
-angular.module("triplifyApp").controller('modalController', function($scope, close, repository, sharedOntology) {
+angular.module("triplifyApp").controller('modalRepositoryCtrl', function($scope, close, repository, sharedOntology) {
 	
 	$scope.ontology = sharedOntology.getOntology();
 	

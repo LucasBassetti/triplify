@@ -1,6 +1,4 @@
-
-<!-- The actual modal template, just a bit o bootstrap -->
-<script type="text/ng-template" id="modal.html">
+<script type="text/ng-template" id="modalRepository.html">
 <div class="modal fade">
 	<div class="modal-dialog">
 		<div class="modal-content">
@@ -12,13 +10,13 @@
 			<div class="modal-body">
 				<form class="form-horizontal new-ontology-repository" role="form"> 
 			    <div class="form-group"> 
-			      <label class="control-label col-sm-2" for="email">Prefix:</label> 
+			      <label class="control-label col-sm-2">Prefix:</label> 
 			      <div class="col-sm-10"> 
 			        <input type="prefix" class="form-control prefix" placeholder="Enter prefix" ng-model="repository.prefix" > 
 			      </div> 
 			   </div> 
 			   <div class="form-group"> 
-			      <label class="control-label col-sm-2" for="pwd">Namespace:</label> 
+			      <label class="control-label col-sm-2">Namespace:</label> 
 			      <div class="col-sm-10">           
 			        <input type="namespace" class="form-control namespace" placeholder="Enter namespace" ng-model="repository.namespace"> 
 			      </div> 

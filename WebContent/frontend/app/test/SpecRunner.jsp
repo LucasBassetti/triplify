@@ -13,11 +13,15 @@
 	<!-- jQuery 2.1.4 -->
     <script src="/triplify/frontend/app/plugins/jQuery/jQuery-2.1.4.min.js"></script>
 
+	<!-- Angular -->
+	<script src="/triplify/frontend/bower_components/angular/angular.min.js"></script>
+	
+	<!-- Triplify Scripts -->
 	<script src="/triplify/frontend/app/scripts/triplify.js"></script>
 	<script src="/triplify/frontend/app/scripts/models/triplify.model.ontology.js"></script>
 
   	<!-- include spec files here... -->
-  	<script src="spec/OntologySpec.js"></script>
+  	<script src="/triplify/frontend/app/test/spec/OntologySpec.js"></script>
 
 </head>
 
