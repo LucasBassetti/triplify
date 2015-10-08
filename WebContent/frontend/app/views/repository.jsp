@@ -21,9 +21,9 @@
 					<div class="repositories">
 						<table class="table table-bordered table-striped table-hover dataTable">
 							<tr>
-								<th style="width: 100px"></th>
-								<th style="width: 100px">Prefix</th>
-								<th>Namespace</th>
+								<th style="width: 10%"></th>
+								<th style="width: 10%">Prefix</th>
+								<th style="width: 80%">Namespace</th>
 							</tr>
 							<tr ng-repeat="repository in ontology.repositories">
 								<td style="text-align: center"><a class="edit-repository" alt="Edit" ng-click="show(repository)"> <i class="fa fa-edit"></i> 
@@ -39,6 +39,6 @@
 	</div>
 	
 	<!-- modal -->
-	<div ng-include="'/triplify/frontend/app/views/modalRepositoryContent.jsp'"></div>
+	<div ng-include="'/triplify/frontend/app/views/modals/modalRepositoryContent.jsp'"></div>
 	
 </section>

@@ -7,7 +7,7 @@ angular.module("triplifyApp").controller('configurationCtrl', function($scope, M
 		console.log(JSON.stringify(database));
 		
 		ModalService.showModal({
-            templateUrl: 'modalConfiguration.html',
+            templateUrl: 'modalDatabaseConfiguration.html',
             controller: "modalConfigurationCtrl",
         	inputs: {
         		database : database,
@@ -24,6 +24,17 @@ angular.module("triplifyApp").controller('configurationCtrl', function($scope, M
 	
 	$scope.showTripleStore = function(tripleStore) {
 		console.log(JSON.stringify(tripleStore));
+		
+		ModalService.showModal({
+            templateUrl: 'modalTripleStoreConfiguration.html',
+            controller: "modalConfigurationCtrl",
+        	inputs: {
+        		database : undefined,
+        		tripleStore : tripleStore
+	        }
+        }).then(function(modal) {
+            modal.element.modal();
+        });
 	};
 	
 	$scope.deleteTripleStore = function(tripleStore) {

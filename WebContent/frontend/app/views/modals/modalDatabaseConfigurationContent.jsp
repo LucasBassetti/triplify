@@ -1,4 +1,4 @@
-<script type="text/ng-template" id="modalConfiguration.html">
+<script type="text/ng-template" id="modalDatabaseConfiguration.html">
 <div class="modal fade">
 	<div class="modal-dialog">
 		<div class="modal-content">

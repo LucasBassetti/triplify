@@ -339,8 +339,8 @@
 	
 	<script src="/triplify/frontend/app/scripts/controllers/triplify.ctrl.configurationCtrl.js"></script>
 	<script src="/triplify/frontend/app/scripts/controllers/triplify.ctrl.repositoryCtrl.js"></script>
-	<script src="/triplify/frontend/app/scripts/controllers/triplify.ctrl.modalRepositoryCtrl.js"></script>
-	<script src="/triplify/frontend/app/scripts/controllers/triplify.ctrl.modalConfigurationCtrl.js"></script>
+	<script src="/triplify/frontend/app/scripts/controllers/modals/triplify.ctrl.modalRepositoryCtrl.js"></script>
+	<script src="/triplify/frontend/app/scripts/controllers/modals/triplify.ctrl.modalConfigurationCtrl.js"></script>
 
 </body>
 </html>

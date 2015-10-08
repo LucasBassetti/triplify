@@ -14,6 +14,7 @@ angular.module("triplifyApp").controller('modalConfigurationCtrl', function($sco
 	
 	if(tripleStore) {
 		$scope.tripleStore = tripleStore;
+		$scope.selectedOption = tripleStore.name;
 	}
 	
 	$scope.close = function(result) {

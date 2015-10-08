@@ -77,6 +77,7 @@
 	</div>
 	
 	<!-- modal -->
-	<div ng-include="'/triplify/frontend/app/views/modalConfigurationContent.jsp'"></div>
+	<div ng-include="'/triplify/frontend/app/views/modals/modalDatabaseConfigurationContent.jsp'"></div>
+	<div ng-include="'/triplify/frontend/app/views/modals/modalTripleStoreConfigurationContent.jsp'"></div>
 	
 </section>
