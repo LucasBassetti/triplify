@@ -18,10 +18,11 @@
 							<th>Namespace</th>
 						</tr>
 						<tr ng-repeat="repository in ontology.repositories">
-							<td style="text-align: center"><a class="edit-repository" alt="Edit"> <i class="fa fa-edit"></i> <a class="delete-repository" alt="Delete"> <i class="fa fa-trash-o"></i> </a></td>
+							<td style="text-align: center"><a class="edit-repository" alt="Edit" ng-click="show(repository)"> <i class="fa fa-edit"></i> 
+							<a class="delete-repository" alt="Delete" ng-click="deleteRepository(repository)"> <i class="fa fa-trash-o"></i> </a></td>
 							<td>{{repository.prefix}}</td>
 							<td>{{repository.namespace}}</td>						
-						</tr>
+						</tr> 
 					</table>
 				</div>
 			</div>

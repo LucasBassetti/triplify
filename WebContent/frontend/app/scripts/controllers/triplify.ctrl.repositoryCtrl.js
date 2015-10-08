@@ -1,17 +1,27 @@
-angular.module("triplifyApp").controller("repositoryCtrl", function ($scope, ModalService) {
+angular.module("triplifyApp").controller("repositoryCtrl", function ($scope, ModalService, sharedOntology) {
 	
-	$scope.ontology = new triplify.model.Ontology();
-	
-	$scope.show = function() {
+	$scope.ontology = sharedOntology.getOntology();
+
+	$scope.show = function(repository) {
+		
+		console.log('EDIT: ' + JSON.stringify(repository));
+		
         ModalService.showModal({
             templateUrl: 'modal.html',
-            controller: "ModalController"
+            controller: "modalController",
+        	inputs: {
+        		repository : repository
+	        }
         }).then(function(modal) {
             modal.element.modal();
-            modal.close.then(function(result) {
-                $scope.message = "You said " + result;
-            });
+//            modal.close.then(function(result) {
+//                $scope.message = "You said " + result;
+//            });
         });
+    };
+    
+    $scope.deleteRepository = function(repository) {
+    	$scope.ontology.deleteRepository(repository);
     };
     
 });

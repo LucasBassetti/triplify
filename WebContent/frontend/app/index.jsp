@@ -335,7 +335,9 @@
 	
 	<script src="/triplify/frontend/app/scripts/triplify.js"></script>
 	<script src="/triplify/frontend/app/scripts/models/triplify.model.ontology.js"></script>
+	<script src="/triplify/frontend/app/scripts/models/triplify.model.configuration.js"></script>
 	
+	<script src="/triplify/frontend/app/scripts/controllers/triplify.ctrl.configurationCtrl.js"></script>
 	<script src="/triplify/frontend/app/scripts/controllers/triplify.ctrl.repositoryCtrl.js"></script>
 	<script src="/triplify/frontend/app/scripts/controllers/triplify.ctrl.modalCtrl.js"></script>
 

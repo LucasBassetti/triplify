@@ -20,14 +20,15 @@ describe("Create Ontology module successfully", function () {
 describe("Ontology module loadRepositories", function () {
 	
 	var mod = new Ontology();
+	mod.loadRepositories()
 	
-	it("must load a array", function () {
-		expect(mod.loadRepositories()).toEqual(jasmine.any(Array));
-	});
+//	it("must load a array", function () {
+//		expect(mod.loadRepositories()).toEqual(jasmine.any(Array));
+//	});
 	
-	 it("must return a array", function() {
-		var repositories = mod.loadRepositories()
-		expect(repositories).toEqual(jasmine.any(Array));
+	 it("must be a array", function() {
+//		var repositories = mod.loadRepositories()
+		expect(mod.repositories).toEqual(jasmine.any(Array));
 	 });
 	
 });

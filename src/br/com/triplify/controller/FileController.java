@@ -24,7 +24,7 @@ public class FileController {
 	}
 	
 	@RequestMapping(method = RequestMethod.POST, value="/createOntologyFile")
-	public void createOntologyFile(@RequestParam("repositories") String repositories, @RequestParam("entities") String entities) {
+	public @ResponseBody void createOntologyFile(@RequestParam("repositories") String repositories, @RequestParam("entities") String entities) {
 		File file = FileManager.createOntologyFile("repositories.json");
 		FileManager.writeToFile(file, repositories);
 		
