@@ -19,9 +19,11 @@
 	<!-- Triplify Scripts -->
 	<script src="/triplify/frontend/app/scripts/triplify.js"></script>
 	<script src="/triplify/frontend/app/scripts/models/triplify.model.ontology.js"></script>
+	<script src="/triplify/frontend/app/scripts/models/triplify.model.configuration.js"></script>
 
   	<!-- include spec files here... -->
   	<script src="/triplify/frontend/app/test/spec/OntologySpec.js"></script>
+  	<script src="/triplify/frontend/app/test/spec/ConfigurationSpec.js"></script>
 
 </head>
 

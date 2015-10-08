@@ -2,7 +2,7 @@
 
 var Ontology = triplify.model.Ontology;
 
-describe("Describe Ontology Prototype", function () {
+describe("==== Describe Ontology Prototype ====", function () {
 
 	describe("New Ontology", function () {
 		it("Ontology Object => must be defined", function () {
@@ -22,7 +22,7 @@ describe("Describe Ontology Prototype", function () {
 			 
 			 var repository = {
 				'prefix' : 'fake',
-				'namespace' : 'http://www.fakenamespace.com'
+				'namespace' : 'http://www.fake-namespace.com'
 			};
 			 
 			ontology.repositories.push(repository) 
